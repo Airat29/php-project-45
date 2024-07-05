@@ -1,0 +1,17 @@
+{
+    "name": "hexlet/code",
+    "description": "stable",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Airat29",
+            "email": "fat.airat@rambler.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
