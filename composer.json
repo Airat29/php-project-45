@@ -3,9 +3,9 @@
     "bin": ["bin/brain-games"],
     "description": "stable",
     "autoload": {
-        "psr-4": {
-            "Hexlet\\Code\\": "src"
-        }
+        "files": [ 
+            "src/Cli.php" 
+    ]
     },
     "authors": [
         {
@@ -13,6 +13,8 @@
             "email": "fat.airat@rambler.ru"
         }
     ],
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.0"
+    },
     "license": "MIT"
 }
