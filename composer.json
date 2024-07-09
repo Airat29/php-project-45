@@ -1,10 +1,14 @@
 {
     "name": "hexlet/code",
-    "bin": ["bin/brain-games"],
+    "bin": [
+        "bin/brain-games",
+        "bin/brain-even"
+        ],
     "description": "stable",
     "autoload": {
         "files": [ 
-            "src/Cli.php" 
+            "src/Cli.php",
+            "src/Games/Even.php" 
     ]
     },
     "authors": [
