@@ -31,5 +31,3 @@ function games()
     }
     line("Congratulations, %s!", $start);
 };
-
-

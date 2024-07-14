@@ -3,3 +3,5 @@
 <a href="https://codeclimate.com/github/Airat29/php-project-45/maintainability"><img src="https://api.codeclimate.com/v1/badges/cdd5d327f4e17080e123/maintainability" /></a>
 
 https://asciinema.org/a/cr5dDSbnG4GDzYKsiDpK1IoN5 - Brain-even game video
+
+https://asciinema.org/a/2HsPGlhoIodp01vgqV3gWQJBL - Brain-calc game video
