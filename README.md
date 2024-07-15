@@ -7,3 +7,5 @@ https://asciinema.org/a/cr5dDSbnG4GDzYKsiDpK1IoN5 - Brain-even game video
 https://asciinema.org/a/2HsPGlhoIodp01vgqV3gWQJBL - Brain-calc game video
 
 https://asciinema.org/a/BgXOPA88lebMj8M1IaXpv3Z21 - Brain-gcd game video
+
+https://asciinema.org/a/N90sP5eqy3Tk6nyej37Oir24U - Brain-progression game video
