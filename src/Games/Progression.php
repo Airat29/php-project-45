@@ -24,7 +24,7 @@ function games()
         $massivQuestion = implode(' ', $massivDone);
         line("Question: $massivQuestion");
         $true = array_diff($firstMassiv, $massivDone);
-        echo $trueAnswer = implode(' ', $true);
+        $trueAnswer = implode(' ', $true);
         $personAnswer = getAnswer();
         if ($personAnswer === $trueAnswer) {
             line('Correct!');
