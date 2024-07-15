@@ -21,11 +21,11 @@ function games()
         } elseif ($question % 2 != 0 && $answer === 'no') {
             line('Correct!');
         } elseif ($question % 2 != 0 && $answer === 'yes') {
-            line("'yes' is wrong answer ;(. Correct answer 'no'.");
+            line("'$answer' is wrong answer ;(. Correct answer 'no'.");
             line("Let's try again, %s!", $start);
             return false;
         } else {
-            line("'no' is wrong answer ;(. Correct answer 'yes'.");
+            line("'$answer' is wrong answer ;(. Correct answer 'yes'.");
             line("Let's try again, %s!", $start);
             return false;
         }
