@@ -8,6 +8,7 @@ use function Php\Project\Engine\correctAnswer;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
 use function Php\Project\Engine\finishGame;
+
 function games()
 {
     $start = greeting();

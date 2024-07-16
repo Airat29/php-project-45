@@ -12,8 +12,8 @@ use function Php\Project\Engine\finishGame;
 function games()
 {
     $start = greeting();
-    $howRounds = 3;
     line('Find the greatest common divisor of given numbers.');
+    $howRounds = 3;
     for ($i = 0; $i < $howRounds; $i++) {
         $firstNumber = rand(1, 20);
         $secondNumber = rand(1, 20);
