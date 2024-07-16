@@ -4,8 +4,10 @@ namespace Php\Project\Games\Prime;
 
 use function cli\line;
 use function cli\prompt;
+use function Php\Project\Engine\correctAnswer;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
+use function Php\Project\Engine\finishGame;
 
 function games()
 {
@@ -18,9 +20,9 @@ function games()
         $answer = getAnswer();
         $trueAnswer = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
         if (in_array($question, $trueAnswer) && $answer === 'yes') {
-            line('Correct!');
+            correctAnswer();
         } elseif (!in_array($question, $trueAnswer) && $answer === 'no') {
-            line('Correct!');
+            correctAnswer();
         } elseif (!in_array($question, $trueAnswer) && $answer === 'yes') {
             line("'$answer' is wrong answer ;(. Correct answer 'no'.");
             line("Let's try again, %s!", $start);
@@ -31,5 +33,5 @@ function games()
             return false;
         }
     };
-    line("Congratulations, %s!", $start);
+    finishGame($start);
 }

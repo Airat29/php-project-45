@@ -4,8 +4,10 @@ namespace Php\Project\Games\Even;
 
 use function cli\line;
 use function cli\prompt;
+use function Php\Project\Engine\correctAnswer;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
+use function Php\Project\Engine\finishGame;
 
 function games()
 {
@@ -17,9 +19,9 @@ function games()
         line("Question: %s", $question);
         $answer = getAnswer();
         if ($question % 2 === 0 && $answer === 'yes') {
-            line('Correct!');
+            correctAnswer();
         } elseif ($question % 2 != 0 && $answer === 'no') {
-            line('Correct!');
+            correctAnswer();
         } elseif ($question % 2 != 0 && $answer === 'yes') {
             line("'$answer' is wrong answer ;(. Correct answer 'no'.");
             line("Let's try again, %s!", $start);
@@ -30,5 +32,5 @@ function games()
             return false;
         }
     };
-    line("Congratulations, %s!", $start);
+    finishGame($start);
 }

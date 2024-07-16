@@ -4,8 +4,10 @@ namespace Php\Project\Games\Calc;
 
 use function cli\line;
 use function cli\prompt;
+use function Php\Project\Engine\correctAnswer;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
+use function Php\Project\Engine\finishGame;
 
 function games()
 {
@@ -22,12 +24,12 @@ function games()
         line("Question: %s", $question);
         $personAnswer = getAnswer();
         if ($personAnswer == $trueAnswer) {
-            line('Correct!');
+            correctAnswer();
         } else {
             line("'$personAnswer' is wrong answer ;(. Correct answer was '$trueAnswer'.");
             line("Let's try again, %s!", $start);
             return false;
         }
     }
-    line("Congratulations, %s!", $start);
+    finishGame($start);
 }

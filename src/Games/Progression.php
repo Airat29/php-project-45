@@ -4,9 +4,10 @@ namespace Php\Project\Games\Progression;
 
 use function cli\line;
 use function cli\prompt;
+use function Php\Project\Engine\correctAnswer;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
-
+use function Php\Project\Engine\finishGame;
 function games()
 {
     $start = greeting();
@@ -27,12 +28,12 @@ function games()
         $trueAnswer = implode(' ', $true);
         $personAnswer = getAnswer();
         if ($personAnswer === $trueAnswer) {
-            line('Correct!');
+            correctAnswer();
         } else {
             line("'$personAnswer' is wrong answer ;(. Correct answer was '$trueAnswer'.");
             line("Let's try again, %s!", $start);
             return false;
         };
     }
-    line("Congratulations, %s!", $start);
+    finishGame($start);
 }

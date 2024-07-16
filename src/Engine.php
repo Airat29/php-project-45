@@ -18,3 +18,13 @@ function getAnswer()
     $answer = prompt('Your answer');
     return $answer;
 }
+
+function correctAnswer()
+{
+    line('Correct!');
+}
+
+function finishGame($name)
+{
+    line("Congratulations, %s!", $name);
+}
