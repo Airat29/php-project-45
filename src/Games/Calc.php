@@ -13,15 +13,15 @@ function games()
     $howRounds = 3;
     line('What is the result of the expression?');
     for ($i = 0; $i < $howRounds; $i++) {
-        $firstNumber = rand(0,20);
-        $secondNumber = rand(0,20);
+        $firstNumber = rand(0, 20);
+        $secondNumber = rand(0, 20);
         $sign = ['+', '-', '*'];
         $randSign = $sign[array_rand($sign)];
         $question = $firstNumber . $randSign . $secondNumber;
         $trueAnswer = eval("return $question;");
         line("Question: %s", $question);
         $personAnswer = getAnswer();
-        if ( $personAnswer == $trueAnswer) {
+        if ($personAnswer == $trueAnswer) {
             line('Correct!');
         } else {
             line("'$personAnswer' is wrong answer ;(. Correct answer was '$trueAnswer'.");
@@ -30,4 +30,4 @@ function games()
         }
     }
     line("Congratulations, %s!", $start);
-};
+}

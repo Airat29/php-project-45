@@ -13,9 +13,9 @@ function games()
     $howRounds = 3;
     line('What number is missing in the progression?');
     for ($i = 0; $i < $howRounds; $i++) {
-        $firstNumber = rand(1,20);
-        $step = rand(1,10);
-        $howManySteps = rand(5,10);
+        $firstNumber = rand(1, 20);
+        $step = rand(1, 10);
+        $howManySteps = rand(5, 10);
         $endMassiv = $firstNumber + $howManySteps * $step;
         $firstMassiv = range($firstNumber, $endMassiv, $step);
         $randKey = array_rand($firstMassiv);
