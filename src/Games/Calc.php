@@ -17,7 +17,7 @@ function games()
         $secondNumber = rand(0, 20);
         $sign = ['+', '-', '*'];
         $randSign = $sign[array_rand($sign)];
-        $question = $firstNumber . $randSign . $secondNumber;
+        $question = $firstNumber.$randSign.$secondNumber;
         $trueAnswer = eval("return $question;");
         line("Question: %s", $question);
         $personAnswer = getAnswer();
