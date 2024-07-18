@@ -23,3 +23,21 @@ function finishGame(string $name): void
 {
     line("Congratulations, %s!", $name);
 }
+
+function askQuestionBool()
+{
+    $question = rand(0, 100);
+    line("Question: %s", $question);
+    return $question;
+}
+
+function checkingTheAnswer(int $personAnswer, int $trueAnswer, string $name)
+{
+    if ($personAnswer == $trueAnswer) {
+        line('Correct!');
+    } else {
+        line("'$personAnswer' is wrong answer ;(. Correct answer was '$trueAnswer'.");
+        line("Let's try again, %s!", $name);
+        return exit;
+    };
+}
