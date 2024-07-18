@@ -18,9 +18,8 @@ function games()
         $firstNumber = rand(1, 20);
         $secondNumber = rand(1, 20);
         $firstMassiv = range(1, $firstNumber);
-        $secondMassiv = range(1, $secondNumber);
         $gcdMassiv = [];
-        line("Question: {$firstNumber} {$secondNumber}");
+        line("Question: %s %s", $firstNumber, $secondNumber);
         $personAnswer = getAnswer();
         foreach ($firstMassiv as $numbers) {
             if ($firstNumber % $numbers === 0 && $secondNumber % $numbers === 0) {

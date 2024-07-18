@@ -19,8 +19,7 @@ function games()
         $number2 = rand(0, 20);
         $sign = ['+', '-', '*'];
         $operation = $sign[array_rand($sign)];
-        $question = $number1 . $operation . $number2;
-        $trueAnswer = eval("return $question;");
+        $trueAnswer = eval("return $number1 $operation $number2;");
         line("Question: %s %s %s", $number1, $operation, $number2);
         $personAnswer = getAnswer();
         checkingTheAnswer($personAnswer, $trueAnswer, $name);
