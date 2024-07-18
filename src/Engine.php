@@ -18,3 +18,8 @@ function getAnswer()
     $answer = prompt('Your answer');
     return $answer;
 }
+
+function finishGame($name)
+{
+    line("Congratulations, %s!", $name);
+}

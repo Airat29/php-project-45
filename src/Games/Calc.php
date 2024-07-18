@@ -6,6 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
+use function Php\Project\Engine\finishGame;
 
 function games()
 {
@@ -13,13 +14,13 @@ function games()
     $howRounds = 3;
     line('What is the result of the expression?');
     for ($i = 0; $i < $howRounds; $i++) {
-        $firstNumber = rand(0, 20);
-        $secondNumber = rand(0, 20);
+        $number1 = rand(0, 20);
+        $number2 = rand(0, 20);
         $sign = ['+', '-', '*'];
-        $randSign = $sign[array_rand($sign)];
-        $question = $firstNumber.$randSign.$secondNumber;
+        $operation = $sign[array_rand($sign)];
+        $question = $number1.$operation.$number2;
         $trueAnswer = eval("return $question;");
-        line("Question: %s", $question);
+        line("Question: %s %s %s", $number1, $operation, $number2);
         $personAnswer = getAnswer();
         if ($personAnswer == $trueAnswer) {
             line('Correct!');
@@ -29,5 +30,5 @@ function games()
             return false;
         }
     }
-    line("Congratulations, %s!", $start);
+    finishGame($start);
 }

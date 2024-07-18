@@ -6,6 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
+use function Php\Project\Engine\finishGame;
 
 function games()
 {
@@ -30,5 +31,5 @@ function games()
             return false;
         }
     };
-    line("Congratulations, %s!", $start);
+    finishGame($start);
 }
