@@ -29,7 +29,7 @@ make brain-prime
 
 ## Brain-even game video
 
-[![asciicast](https://asciinema.org/a/cr5dDSbnG4GDzYKsiDpK1IoN5.svg)](https://asciinema.org/a/cr5dDSbnG4GDzYKsiDpK1IoN5)
+[![asciicast]( https://asciinema.org/a/anp4up7gwCucciaYEzf9zIaCF.svg)]( https://asciinema.org/a/anp4up7gwCucciaYEzf9zIaCF)
 
 ## Brain-calc game video
 [![asciicast](https://asciinema.org/a/2HsPGlhoIodp01vgqV3gWQJBL.svg)](https://asciinema.org/a/2HsPGlhoIodp01vgqV3gWQJBL)
@@ -44,4 +44,4 @@ make brain-prime
 
 ## Brain-prime video game
 
- [![asciicast](https://asciinema.org/a/BLW9P3Ri0CoDaw2J4QlpESBti.svg)] (https://asciinema.org/a/BLW9P3Ri0CoDaw2J4QlpESBti) 
+ [![asciicast](https://asciinema.org/a/BLW9P3Ri0CoDaw2J4QlpESBti.svg)](https://asciinema.org/a/BLW9P3Ri0CoDaw2J4QlpESBti) 
