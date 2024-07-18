@@ -31,7 +31,7 @@ function askQuestionBool()
     return $question;
 }
 
-function checkingTheAnswer($personAnswer, $trueAnswer, $name)
+function checkingTheAnswer(int $personAnswer, int $trueAnswer, string $name)
 {
     if ($personAnswer == $trueAnswer) {
         line('Correct!');
