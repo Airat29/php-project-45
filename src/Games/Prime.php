@@ -4,7 +4,6 @@ namespace Php\Project\Games\Prime;
 
 use function cli\line;
 use function cli\prompt;
-use function Php\Project\Engine\correctAnswer;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
 use function Php\Project\Engine\finishGame;
@@ -19,11 +18,11 @@ function games()
         line("Question: %s", $question);
         $answer = getAnswer();
         $trueAnswer = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
-        if (in_array($question, $trueAnswer) && $answer === 'yes') {
-            correctAnswer();
-        } elseif (!in_array($question, $trueAnswer) && $answer === 'no') {
-            correctAnswer();
-        } elseif (!in_array($question, $trueAnswer) && $answer === 'yes') {
+        if (in_array($question, $trueAnswer, true) && $answer === 'yes') {
+            line('Correct!');
+        } elseif (!in_array($question, $trueAnswer, true) && $answer === 'no') {
+            line('Correct!');
+        } elseif (!in_array($question, $trueAnswer, true) && $answer === 'yes') {
             line("'$answer' is wrong answer ;(. Correct answer 'no'.");
             line("Let's try again, %s!", $start);
             return false;

@@ -4,7 +4,6 @@ namespace Php\Project\Games\Gcd;
 
 use function cli\line;
 use function cli\prompt;
-use function Php\Project\Engine\correctAnswer;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
 use function Php\Project\Engine\finishGame;
@@ -29,7 +28,7 @@ function games()
         };
         $trueAnswer = max($gcdMassiv);
         if ($personAnswer == $trueAnswer) {
-            correctAnswer();
+            line('Correct!');
         } else {
             line("'$personAnswer' is wrong answer ;(. Correct answer was '$trueAnswer'.");
             line("Let's try again, %s!", $start);

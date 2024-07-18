@@ -19,12 +19,7 @@ function getAnswer()
     return $answer;
 }
 
-function correctAnswer()
-{
-    line('Correct!');
-}
-
-function finishGame($name)
+function finishGame(string $name): void
 {
     line("Congratulations, %s!", $name);
 }
