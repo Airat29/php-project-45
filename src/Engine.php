@@ -41,3 +41,17 @@ function checkingTheAnswer(int $personAnswer, int $trueAnswer, string $name)
         return exit;
     };
 }
+
+function badAnswerYes(string $personAnswer, string $name)
+{
+    line("'$personAnswer' is wrong answer ;(. Correct answer 'no'.");
+    line("Let's try again, %s!", $name);
+    return exit;
+}
+
+function badAnswerNo(string $personAnswer, string $name)
+{
+    line("'$personAnswer' is wrong answer ;(. Correct answer 'yes'.");
+    line("Let's try again, %s!", $name);
+    return exit;
+}

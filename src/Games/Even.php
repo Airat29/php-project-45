@@ -8,6 +8,8 @@ use function Php\Project\Engine\askQuestionBool;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
 use function Php\Project\Engine\finishGame;
+use function Php\Project\Engine\badAnswerNo;
+use function Php\Project\Engine\badAnswerYes;
 
 function games()
 {
@@ -22,13 +24,9 @@ function games()
         } elseif ($question % 2 != 0 && $personAnswer === 'no') {
             line('Correct!');
         } elseif ($question % 2 != 0 && $personAnswer === 'yes') {
-            line("'$personAnswer' is wrong answer ;(. Correct answer 'no'.");
-            line("Let's try again, %s!", $name);
-            return false;
+            badAnswerYes($personAnswer, $name);
         } else {
-            line("'$personAnswer' is wrong answer ;(. Correct answer 'yes'.");
-            line("Let's try again, %s!", $name);
-            return false;
+            badAnswerNo($personAnswer, $name);
         }
     };
     finishGame($name);
