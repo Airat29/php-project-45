@@ -4,13 +4,14 @@ namespace Php\Project\Games\Calc;
 
 use function cli\line;
 use function cli\prompt;
+use function Php\Project\Engine\checkingTheAnswer;
 use function Php\Project\Engine\greeting;
 use function Php\Project\Engine\getAnswer;
 use function Php\Project\Engine\finishGame;
 
 function games()
 {
-    $start = greeting();
+    $name = greeting();
     $howRounds = 3;
     line('What is the result of the expression?');
     for ($i = 0; $i < $howRounds; $i++) {
@@ -22,13 +23,7 @@ function games()
         $trueAnswer = eval("return $question;");
         line("Question: %s %s %s", $number1, $operation, $number2);
         $personAnswer = getAnswer();
-        if ($personAnswer == $trueAnswer) {
-            line('Correct!');
-        } else {
-            line("'$personAnswer' is wrong answer ;(. Correct answer was '$trueAnswer'.");
-            line("Let's try again, %s!", $start);
-            return false;
-        }
+        checkingTheAnswer($personAnswer, $trueAnswer, $name);
     }
-    finishGame($start);
+    finishGame($name);
 }
