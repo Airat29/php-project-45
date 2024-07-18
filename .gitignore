@@ -1,1 +1,4 @@
 /vendor/
+
+.phpcdf.phar/
+phpcs.phar/
