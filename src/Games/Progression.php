@@ -26,7 +26,7 @@ function games()
         $massivQuestion = implode(' ', $massivDone);
         line("Question: $massivQuestion");
         $true = array_diff($firstMassiv, $massivDone);
-        $trueAnswer = implode(' ', $true);
+        $trueAnswer = (int) implode(' ', $true);
         $personAnswer = getAnswer();
         checkingTheAnswer($personAnswer, $trueAnswer, $name);
     }
