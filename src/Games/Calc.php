@@ -12,14 +12,12 @@ use const Php\Project\Engine\RANDOM_MAXIMUM_NUMBER;
 function runGameCalc()
 {
     $rule = 'What is the result of the expression?';
-    
     $callback = function () {
         $sign = ['+', '-', '*'];
         $firstNumber = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
         $secondNumber = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
         $randOperator = $sign[array_rand($sign)];
         $result = correctAnswerGame($firstNumber, $secondNumber, $randOperator);
-
         return [
             'question' => "{$firstNumber} {$randOperator} {$secondNumber}",
             'correctAnswer' => $result
@@ -30,12 +28,12 @@ function runGameCalc()
 
 function correctAnswerGame($firstNumber, $secondNumber, $randOperator)
 {
-    switch($randOperator) {
-        case '+' :
+    switch ($randOperator) {
+        case '+':
             return $firstNumber + $secondNumber;
-        case '-' :
+        case '-':
             return $firstNumber - $secondNumber;
-        case '*' :
+        case '*':
             return $firstNumber * $secondNumber;
         default:
             return null;

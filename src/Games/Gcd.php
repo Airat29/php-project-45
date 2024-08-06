@@ -4,30 +4,38 @@ namespace Php\Project\Games\Gcd;
 
 use function cli\line;
 use function cli\prompt;
-use function Php\Project\Engine\greeting;
-use function Php\Project\Engine\getAnswer;
-use function Php\Project\Engine\finishGame;
-use function Php\Project\Engine\checkingTheAnswer;
+use function Php\Project\Engine\runGame;
 
-function games()
+use const Php\Project\Engine\RANDOM_MINIMUM_NUMBER;
+use const Php\Project\Engine\RANDOM_MAXIMUM_NUMBER;
+
+function runGameGcd()
 {
-    $name = greeting();
-    $howRounds = 3;
-    line('Find the greatest common divisor of given numbers.');
-    for ($i = 0; $i < $howRounds; $i++) {
-        $firstNumber = rand(1, 20);
-        $secondNumber = rand(1, 20);
-        $firstMassiv = range(1, $firstNumber);
-        $gcdMassiv = [];
-        line("Question: %s %s", $firstNumber, $secondNumber);
-        $personAnswer = getAnswer();
-        foreach ($firstMassiv as $numbers) {
-            if ($firstNumber % $numbers === 0 && $secondNumber % $numbers === 0) {
-                $gcdMassiv[] = $numbers;
+    $rule = 'Find the greatest common divisor of given numbers.';
+    $callback = function () {
+        $firstNumber = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
+        $secondNumber = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
+        $arrayGcd = range(1, $firstNumber);
+        $result = gcdNumber($arrayGcd, $firstNumber, $secondNumber);
+        return [
+            'question' => "{$firstNumber} {$secondNumber}",
+            'correctAnswer' => $result
+        ];
+    };
+    runGame($callback, $rule);
+}
+
+function gcdNumber($arrayGcd, $firstNumber, $secondNumber)
+{
+    $gcdMassiv = [];
+    if ($firstNumber === 0 || $secondNumber === 0) {
+        return 0;
+    } else {
+        foreach ($arrayGcd as $number) {
+            if ($firstNumber % $number === 0 && $secondNumber % $number === 0) {
+                $gcdMassiv[] = $number;
             };
         };
-        $trueAnswer = max($gcdMassiv);
-        checkingTheAnswer($personAnswer, $trueAnswer, $name);
     }
-    finishGame($name);
+    return max($gcdMassiv);
 }

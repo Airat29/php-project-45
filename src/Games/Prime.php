@@ -4,31 +4,33 @@ namespace Php\Project\Games\Prime;
 
 use function cli\line;
 use function cli\prompt;
-use function Php\Project\Engine\greeting;
-use function Php\Project\Engine\getAnswer;
-use function Php\Project\Engine\finishGame;
-use function Php\Project\Engine\askQuestionBool;
-use function Php\Project\Engine\badAnswerNo;
-use function Php\Project\Engine\badAnswerYes;
+use function Php\Project\Engine\runGame;
 
-function games()
+use const Php\Project\Engine\RANDOM_MINIMUM_NUMBER;
+use const Php\Project\Engine\RANDOM_MAXIMUM_NUMBER;
+
+function runGamePrime()
 {
-    $name = greeting();
-    line('Answer "yes" if given number is prime. Otherwise answer "no".');
-    $finishGame = 3;
-    for ($i = 0; $i < $finishGame; $i++) {
-        $question = askQuestionBool();
-        $personAnswer = getAnswer();
-        $trueAnswer = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
-        if (in_array($question, $trueAnswer, true) && $personAnswer === 'yes') {
-            line('Correct!');
-        } elseif (!in_array($question, $trueAnswer, true) && $personAnswer === 'no') {
-            line('Correct!');
-        } elseif (!in_array($question, $trueAnswer, true) && $personAnswer === 'yes') {
-            badAnswerYes($personAnswer, $name);
-        } else {
-            badAnswerNo($personAnswer, $name);
-        }
+    $rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    $callback = function () {
+        $number = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
+        $result = isPrime($number);
+        $correctAnswerGame = correctAnswer($result);
+        return [
+            'question' => $number,
+            'correctAnswer' => $correctAnswerGame
+        ];
     };
-    finishGame($name);
+    runGame($callback, $rule);
+}
+
+function isPrime($number)
+{
+    $primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37];
+    return in_array($number, $primeNumbers, true);
+}
+
+function correctAnswer($result)
+{
+    return $result === true ? 'yes' : 'no';
 }

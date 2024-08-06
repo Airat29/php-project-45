@@ -4,19 +4,17 @@ namespace Php\Project\Games\Progression;
 
 use function cli\line;
 use function cli\prompt;
-use function Php\Project\Engine\checkingTheAnswer;
-use function Php\Project\Engine\greeting;
-use function Php\Project\Engine\getAnswer;
-use function Php\Project\Engine\finishGame;
+use function Php\Project\Engine\runGame;
 
-function games()
+use const Php\Project\Engine\RANDOM_MINIMUM_NUMBER;
+use const Php\Project\Engine\RANDOM_MAXIMUM_NUMBER;
+
+function runGameProgression()
 {
-    $name = greeting();
-    $howRounds = 3;
-    line('What number is missing in the progression?');
-    for ($i = 0; $i < $howRounds; $i++) {
-        $firstNumber = rand(1, 20);
-        $step = rand(1, 10);
+    $rule = 'What number is missing in the progression?';
+    $callback = function () {
+        $firstNumber = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
+        $step = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
         $howManySteps = rand(5, 10);
         $endMassiv = $firstNumber + $howManySteps * $step;
         $firstMassiv = range($firstNumber, $endMassiv, $step);
@@ -24,11 +22,12 @@ function games()
         $hidenElem = [$randKey => '..'];
         $massivDone = array_replace($firstMassiv, $hidenElem);
         $massivQuestion = implode(' ', $massivDone);
-        line("Question: $massivQuestion");
         $true = array_diff($firstMassiv, $massivDone);
         $trueAnswer = (int) implode(' ', $true);
-        $personAnswer = getAnswer();
-        checkingTheAnswer($personAnswer, $trueAnswer, $name);
-    }
-    finishGame($name);
+        return [
+            'question' => $massivQuestion,
+            'correctAnswer' => $trueAnswer
+        ];
+    };
+    runGame($callback, $rule);
 }

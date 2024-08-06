@@ -8,7 +8,7 @@ use function cli\prompt;
 const RANDOM_MINIMUM_NUMBER = 0;
 const RANDOM_MAXIMUM_NUMBER = 10;
 
-function runGame(callable $callback,$firstname)
+function runGame(callable $callback, $firstname)
 {
     $name = greeting($firstname);
 

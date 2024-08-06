@@ -11,14 +11,11 @@ use const Php\Project\Engine\RANDOM_MAXIMUM_NUMBER;
 
 function runGameEven()
 {
-   
     $rule = 'Answer "yes" if the number is even, otherwise answer "no".';
-    
     $callback = function () {
         $number = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
         $result = isEven($number);
         $correctAnswerGame = correctAnswer($result);
-
         return [
             'question' => $number,
             'correctAnswer' => $correctAnswerGame
