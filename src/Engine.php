@@ -5,7 +5,7 @@ namespace Php\Project\Engine;
 use function cli\line;
 use function cli\prompt;
 
-const RANDOM_MINIMUM_NUMBER = 0;
+const RANDOM_MINIMUM_NUMBER = 1;
 const RANDOM_MAXIMUM_NUMBER = 10;
 
 function runGame(callable $callback, $firstname)
