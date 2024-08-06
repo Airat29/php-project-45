@@ -29,19 +29,19 @@ make brain-prime
 
 ## Brain-even game video
 
-[![asciicast]( https://asciinema.org/a/anp4up7gwCucciaYEzf9zIaCF.svg)]( https://asciinema.org/a/anp4up7gwCucciaYEzf9zIaCF)
+[![asciicast](https://asciinema.org/a/CdSkVW5YVHdCqprRS23JKgQ2P.svg)]( https://asciinema.org/a/CdSkVW5YVHdCqprRS23JKgQ2P)
 
 ## Brain-calc game video
-[![asciicast](https://asciinema.org/a/2HsPGlhoIodp01vgqV3gWQJBL.svg)](https://asciinema.org/a/2HsPGlhoIodp01vgqV3gWQJBL)
+[![asciicast](https://asciinema.org/a/rYloY9Y2ScjbZHnFj0XZCnF1R.svg)](https://asciinema.org/a/rYloY9Y2ScjbZHnFj0XZCnF1R)
 
 ## Brain-gcd game video
 
-[![asciicast](https://asciinema.org/a/BgXOPA88lebMj8M1IaXpv3Z21.svg)](https://asciinema.org/a/BgXOPA88lebMj8M1IaXpv3Z21)
+[![asciicast](https://asciinema.org/a/LLhcVSwYwJ7a04WjJzLWu9m9f.svg)](https://asciinema.org/a/LLhcVSwYwJ7a04WjJzLWu9m9f)
 
 ## Brain-progression game video
 
-[![asciicast](https://asciinema.org/a/N90sP5eqy3Tk6nyej37Oir24U.svg)](https://asciinema.org/a/N90sP5eqy3Tk6nyej37Oir24U)
+[![asciicast](https://asciinema.org/a/C3HqQNBjlGE16oEZ8S7TJRPKf.svg)](https://asciinema.org/a/C3HqQNBjlGE16oEZ8S7TJRPKf)
 
 ## Brain-prime video game
 
- [![asciicast](https://asciinema.org/a/BLW9P3Ri0CoDaw2J4QlpESBti.svg)](https://asciinema.org/a/BLW9P3Ri0CoDaw2J4QlpESBti) 
+ [![asciicast](https://asciinema.org/a/9jOCSr5qzEGEOuKjt5NDHhFFy.svg)](https://asciinema.org/a/9jOCSr5qzEGEOuKjt5NDHhFFy) 
