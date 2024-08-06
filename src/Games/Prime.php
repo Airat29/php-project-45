@@ -24,13 +24,13 @@ function runGamePrime()
     runGame($callback, $rule);
 }
 
-function isPrime($number)
+function isPrime(int $number)
 {
     $primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37];
     return in_array($number, $primeNumbers, true);
 }
 
-function correctAnswer($result)
+function correctAnswer(bool $result)
 {
     return $result === true ? 'yes' : 'no';
 }

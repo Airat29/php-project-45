@@ -24,12 +24,12 @@ function runGameEven()
     runGame($callback, $rule);
 }
 
-function isEven($number)
+function isEven(int $number)
 {
     return $number % 2 === 0;
 }
 
-function correctAnswer($result)
+function correctAnswer(bool $result)
 {
     return $result === true ? 'yes' : 'no';
 }

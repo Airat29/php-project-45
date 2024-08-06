@@ -8,7 +8,7 @@ use function cli\prompt;
 const RANDOM_MINIMUM_NUMBER = 1;
 const RANDOM_MAXIMUM_NUMBER = 10;
 
-function runGame(callable $callback, $firstname)
+function runGame(callable $callback, string $firstname)
 {
     $name = greeting($firstname);
 
@@ -35,7 +35,7 @@ function runGame(callable $callback, $firstname)
     line("Congratulations, %s!", $name);
 }
 
-function greeting($firstname)
+function greeting(string $firstname)
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');

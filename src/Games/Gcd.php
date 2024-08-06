@@ -25,7 +25,7 @@ function runGameGcd()
     runGame($callback, $rule);
 }
 
-function gcdNumber($arrayGcd, $firstNumber, $secondNumber)
+function gcdNumber(array $arrayGcd, int $firstNumber, int $secondNumber)
 {
     $gcdMassiv = [];
     if ($firstNumber === 0 || $secondNumber === 0) {

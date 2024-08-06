@@ -26,7 +26,7 @@ function runGameCalc()
     runGame($callback, $rule);
 }
 
-function correctAnswerGame($firstNumber, $secondNumber, $randOperator)
+function correctAnswerGame(int $firstNumber, int $secondNumber, string $randOperator)
 {
     switch ($randOperator) {
         case '+':
