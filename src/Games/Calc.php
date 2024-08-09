@@ -8,6 +8,7 @@ use function Php\Project\Engine\runGame;
 
 use const Php\Project\Engine\RANDOM_MINIMUM_NUMBER;
 use const Php\Project\Engine\RANDOM_MAXIMUM_NUMBER;
+
 const RULE_OF_THE_GAME = 'What is the result of the expression?';
 
 function runGameCalc()
