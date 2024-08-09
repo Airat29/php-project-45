@@ -7,14 +7,14 @@ use function cli\prompt;
 
 const RANDOM_MINIMUM_NUMBER = 1;
 const RANDOM_MAXIMUM_NUMBER = 10;
+const HOW_ROUNDS = 3;
+
 
 function runGame(callable $callback, string $firstname)
 {
     $name = greeting($firstname);
 
-    $howRounds = 3;
-    $howcorrectAnswers = 0;
-    for ($i = 0; $i < $howRounds; $i++) {
+    for ($i = 0; $i < HOW_ROUNDS; $i++) {
         $data = $callback();
         $question = $data['question'];
         $trueAnswer = $data['correctAnswer'];
@@ -23,7 +23,6 @@ function runGame(callable $callback, string $firstname)
         $answer = prompt('Your answer');
 
         if ($answer == $trueAnswer) {
-            $howcorrectAnswers += 1;
             line('Correct!');
         } else {
             line("'$answer' is wrong answer ;(. Correct answer was '$trueAnswer'.");

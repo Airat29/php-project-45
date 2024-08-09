@@ -8,15 +8,16 @@ use function Php\Project\Engine\runGame;
 
 use const Php\Project\Engine\RANDOM_MINIMUM_NUMBER;
 use const Php\Project\Engine\RANDOM_MAXIMUM_NUMBER;
+const RULE_OF_THE_GAME = 'Find the greatest common divisor of given numbers.';
 
 function runGameGcd()
 {
-    $rule = 'Find the greatest common divisor of given numbers.';
+    $rule = RULE_OF_THE_GAME;
     $callback = function () {
         $firstNumber = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
         $secondNumber = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
-        $arrayGcd = range(1, $firstNumber);
-        $result = gcdNumber($arrayGcd, $firstNumber, $secondNumber);
+        $possibleDivisors = range(1, $firstNumber);
+        $result = commonFactor($possibleDivisors, $firstNumber, $secondNumber);
         return [
             'question' => "{$firstNumber} {$secondNumber}",
             'correctAnswer' => $result
@@ -25,17 +26,17 @@ function runGameGcd()
     runGame($callback, $rule);
 }
 
-function gcdNumber(array $arrayGcd, int $firstNumber, int $secondNumber)
+function commonFactor(array $possibleDivisors, int $firstNumber, int $secondNumber)
 {
-    $gcdMassiv = [];
+    $dividers = [];
     if ($firstNumber === 0 || $secondNumber === 0) {
         return 0;
     } else {
-        foreach ($arrayGcd as $number) {
+        foreach ($possibleDivisors as $number) {
             if ($firstNumber % $number === 0 && $secondNumber % $number === 0) {
-                $gcdMassiv[] = $number;
+                $dividers[] = $number;
             };
         };
     }
-    return max($gcdMassiv);
+    return max($dividers);
 }

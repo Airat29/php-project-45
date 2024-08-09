@@ -8,10 +8,11 @@ use function Php\Project\Engine\runGame;
 
 use const Php\Project\Engine\RANDOM_MINIMUM_NUMBER;
 use const Php\Project\Engine\RANDOM_MAXIMUM_NUMBER;
+const RULE_OF_THE_GAME = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function runGameEven()
 {
-    $rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $rule = RULE_OF_THE_GAME;
     $callback = function () {
         $number = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
         $result = isEven($number);

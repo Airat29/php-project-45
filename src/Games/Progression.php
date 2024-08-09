@@ -8,21 +8,22 @@ use function Php\Project\Engine\runGame;
 
 use const Php\Project\Engine\RANDOM_MINIMUM_NUMBER;
 use const Php\Project\Engine\RANDOM_MAXIMUM_NUMBER;
+const RULE_OF_THE_GAME = 'What number is missing in the progression?';
 
 function runGameProgression()
 {
-    $rule = 'What number is missing in the progression?';
+    $rule = RULE_OF_THE_GAME;
     $callback = function () {
         $firstNumber = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
         $step = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
         $howManySteps = rand(5, 10);
-        $endMassiv = $firstNumber + $howManySteps * $step;
-        $firstMassiv = range($firstNumber, $endMassiv, $step);
-        $randKey = array_rand($firstMassiv);
+        $endOfNumbers = $firstNumber + $howManySteps * $step;
+        $fullQuestion = range($firstNumber, $endOfNumbers, $step);
+        $randKey = array_rand($fullQuestion);
         $hidenElem = [$randKey => '..'];
-        $massivDone = array_replace($firstMassiv, $hidenElem);
-        $massivQuestion = implode(' ', $massivDone);
-        $true = array_diff($firstMassiv, $massivDone);
+        $questionWithHidenElement = array_replace($fullQuestion, $hidenElem);
+        $massivQuestion = implode(' ', $questionWithHidenElement);
+        $true = array_diff($fullQuestion, $questionWithHidenElement);
         $trueAnswer = (int) implode(' ', $true);
         return [
             'question' => $massivQuestion,

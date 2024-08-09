@@ -8,10 +8,11 @@ use function Php\Project\Engine\runGame;
 
 use const Php\Project\Engine\RANDOM_MINIMUM_NUMBER;
 use const Php\Project\Engine\RANDOM_MAXIMUM_NUMBER;
+const RULE_OF_THE_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function runGamePrime()
 {
-    $rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    $rule = RULE_OF_THE_GAME;
     $callback = function () {
         $number = rand(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER);
         $result = isPrime($number);
